@@ -25,10 +25,13 @@ jobs:
         java-version: '17'
         distribution: 'temurin'
 
-    - name: 3.Build with Gradle
+    - name: change Mode Gradlew 
+      run: chmod +x /home/runner/work/cloudnative3/cloudnative3/gradlew
+
+    - name: 4.Build with Gradle
       uses: gradle/gradle-build-action@bd5760595778326ba7f1441bcf7e88b49de61a25 # v2.6.0
       with:
         arguments: build
 
-    - name: 4.Build Docker image 
+    - name: 5.Build Docker image 
       run: docker build -t passmeby30/cloudnative .
