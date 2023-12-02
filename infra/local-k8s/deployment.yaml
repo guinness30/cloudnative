@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: cloudnative
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: cloudnative
+  template:
+    metadata:
+      labels:
+        app: cloudnative
+    spec:
+      containers:
+      - name: cloudnative
+        image: passmeby30/cloudnative
+        resources:
+          limits:
+            memory: "128Mi"
+            cpu: "500m"
+        ports:
+        - containerPort: 8080
