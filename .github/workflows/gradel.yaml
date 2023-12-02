@@ -44,4 +44,4 @@ jobs:
         logout: true
 
     - name: 7. Docker Push 
-      run: docker push ${{ secrets.DOCKER_USERNAME }}/cloudnative3
+      run: docker push ${{ secrets.DOCKER_USERNAME }}/cloudnative
